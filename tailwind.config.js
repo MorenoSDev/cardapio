@@ -3,8 +3,8 @@ module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
     extend: {
-      backgroundImage: {
-        "home":"url('/assets/images/bg.png')"
+      backgroundImage:{
+        "home":"url('/assets/bg.png')"
       }
     },
   },
