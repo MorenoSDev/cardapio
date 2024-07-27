@@ -1954,8 +1954,28 @@ video {
   background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
-.bg-home {
+.bg-\[url\(\'\/img\/hero-pattern\.svg\'\)\] {
+  background-image: url('/img/hero-pattern.svg');
+}
+
+.bg-\[url\(\'\'\)\] {
+  background-image: url('');
+}
+
+.bg-\[url\(\'bg\.png\'\)\] {
+  background-image: url('bg.png');
+}
+
+.bg-\[url\(\'\\bg\.png\'\)\] {
+  background-image: url('\bg.png');
+}
+
+.bg-\[url\(\'\/bg\.png\'\)\] {
   background-image: url('/bg.png');
+}
+
+.bg-\[url\(\'\.\/bg\.png\'\)\] {
+  background-image: url('./bg.png');
 }
 
 .decoration-slice {
