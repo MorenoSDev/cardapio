@@ -1954,14 +1954,6 @@ video {
   background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'styles\/bg\.png\'\)\] {
-  background-image: url('styles/bg.png');
-}
-
-.bg-\[url\(\'\/styles\/bg\.png\'\)\] {
-  background-image: url('/styles/bg.png');
-}
-
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
@@ -2681,6 +2673,10 @@ video {
 
 body {
   background-color: #f6f7f8;
+}
+
+header {
+  background-image: url("bg.png");
 }
 
 @media (min-width: 640px) {
