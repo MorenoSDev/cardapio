@@ -6,7 +6,7 @@ const cartTotal = document.getElementById("cart-total")
 const checkoutBtn = document.getElementById("checkout-btn")
 const closeModalBtn = document.getElementById("close-modal-btn")
 const cartCounter = document.getElementById("cart-count")
-const addressInput = document.getElementById("adress")
+const addressInput = document.getElementById("address")
 const addressWarn = document.getElementById("address-warn")
 
 let cart = [];
@@ -102,40 +102,43 @@ function updateCartModal() {
 
 // Função para remover o item do carrinho
 
-cartItemsContainer.addEventListener("click", (event)=> {
+cartItemsContainer.addEventListener("click", function (event){
     if(event.target.classList.contains("remove-from-cart-btn")){
-        const name = event.target.getAttribute("data-name")
-
-        removeItemCart(name);
+      const name = event.target.getAttribute("data-name")
+  
+      removeItemCart(name);
     }
-})
-
-function removeItemCart(name) {
+  
+  })
+  
+  function removeItemCart(name){
     const index = cart.findIndex(item => item.name === name);
+  
+    if(index !== -1){
+      const item = cart[index];
+      
+      if(item.quantity > 1){
+        item.quantity -= 1;
+        updateCartModal();
+        return;
+      }
 
-    if (index !== -1) {
-        const item = cart[index];
-        console.log(item)
-
-        if(item.quantity > 1){
-            item.quantity -= 1;
-            updateCartModal();
-            return;
-        }
         cart.splice(index, 1);
         updateCartModal()
 
     }
 }
 
-addressInput.addEventListener("input", function(event) {
+addressInput.addEventListener("input", function(event){
     let inputValue = event.target.value;
-
+  
     if(inputValue !== ""){
-        addressInput.classList.remove("border-red-500")
-        addressWarn.classList.add("hidden")
+      addressInput.classList.remove("border-red-500")
+      addressWarn.classList.add("hidden")
     }
-})
+  
+  
+  })
 
 checkoutBtn.addEventListener("click", function(){
     if(cart.length === 0) return;
